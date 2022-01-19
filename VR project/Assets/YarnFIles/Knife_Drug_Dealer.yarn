@@ -1,0 +1,60 @@
+title: ShaunStart
+---
+Shaun: Yo what do you want.
+    -> I want to talk to you.
+        <<jump Talk>>
+    -> Nothing. 
+        <<jump PassBy>>
+===
+title: PassBy
+---
+Shaun: Yeah keep moving.
+===
+title: Talk
+---
+Shaun: Why do you want to talk to me? Keep moving!
+Shaun: *pulls out knife*
+    -> Ok, ok. (leave) <<if $hasknife == true>>
+        <<set $hastalked to true>>
+        <<jump PassBy>>
+    ->No. I'm staying. <<if $hasknife == false>>
+        <<set $hastalked to true>>
+        <<jump Threaten>>
+===
+title: Threaten
+---
+Shaun: Can't you understand me? Why are you still talking to me?
+Shaun: No one else wants to...
+    -> I want to help you.
+        <<jump Help>>
+    -> They're scared of you.
+        <<jump Scared>>
+===
+title: Help
+---
+Shaun: Why?
+    -> All of my friends carry knives and I've seen how they're affected by them. I want to help others like them.
+        <<jump Understand>>
+===
+title: Scared
+---
+Shaun: Why would they be scared of me? I'm super approachable!
+    -> You wave your knife around at every chance to try and prove how tough you are.
+        <<jump Understand>>
+===
+title: Understand
+---
+Shaun: Oh... but how else will I get people to respect me?! They don't seem to even ackgnowledge my presence until I pull my knife out!
+Shaun: I tried being nice but they still don't care!
+You: It takes time. Using a knife may be the easier option but it doesn't really change anything. 
+You: If at all it only makes things worse in the end. If you really want things to change you need to stop relying on fear and violence and start using kindness and compassion. 
+You: If you get rid of your knife you'll see it will only get better. 
+    -> There is another dealer around here who doesn't carry a knife. Maybe talk to him and he could help you.
+        <<jump Finish>>
+===
+title: Finish
+---
+Shaun: Woah. Thanks for the advice. It's quite a lot to take in, but...thanks.
+Shaun: I'll go talk to this other dealer and see what's up.
+Shaun: I'll see you around.
+===
