@@ -1,5 +1,8 @@
 title: ShaunStart
 ---
+<<if $shaunTalked == true>>
+    <<jump ShaunReturn>>
+<<endif>>
 Shaun: Yo what do you want.
     -> I want to talk to you.
         <<jump Talk>>
@@ -15,10 +18,8 @@ title: Talk
 Shaun: Why do you want to talk to me? Keep moving!
 Shaun: *pulls out knife*
     -> Ok, ok. (leave) <<if $hasknife == true>>
-        <<set $hastalked to true>>
         <<jump PassBy>>
     ->No. I'm staying. <<if $hasknife == false>>
-        <<set $hastalked to true>>
         <<jump Threaten>>
 ===
 title: Threaten
@@ -50,11 +51,17 @@ You: It takes time. Using a knife may be the easier option but it doesn't really
 You: If at all it only makes things worse in the end. If you really want things to change you need to stop relying on fear and violence and start using kindness and compassion. 
 You: If you get rid of your knife you'll see it will only get better. 
     -> There is another dealer around here who doesn't carry a knife. Maybe talk to him and he could help you.
+        <<set $shaunTalked to true>>
+        <<set $npcSaved += 1>>
         <<jump Finish>>
 ===
 title: Finish
 ---
 Shaun: Woah. Thanks for the advice. It's quite a lot to take in, but...thanks.
 Shaun: I'll go talk to this other dealer and see what's up.
+Shaun: I'll see you around.
+===
+title: ShaunReturn
+---
 Shaun: I'll see you around.
 ===

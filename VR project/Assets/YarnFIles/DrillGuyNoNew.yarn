@@ -1,0 +1,56 @@
+title: DrillGuyNo
+position: 403,-140
+---
+<<if $hasknife == true>>
+Charles: Yo, big man, don't come near me, I see you carryin a knife.
+-> Hey, I don't mean to hurt you. I just wanted to hear whatcha listening to.
+    <<jump KnifeEndNoNew>>
+<<endif>>
+<<if $NoKnifeDrill == true>>
+    <<jump RepeatNoNew>>
+<<endif>>
+Charles: Yo bruv, you interested in hearing some sick ass drill beats?
+-> No, not really, I am not a big fan of the whole drill culture
+    <<jump ContinueGuyNo>>
+===
+title: ContinueGuyNo
+position: 295,-9
+---
+Charles: Why is that so big man, you don't like the sick beats or what?
+-> That is not the case actually. I recently met someone who was also a fan of drill and he carried this giant knife with him.
+I just don't like that.
+    <<jump ExplanationDrillGuyNo>>
+===
+title: ExplanationDrillGuyNo
+position: 23,-3
+---
+Charles: Ah I see. A lot of people who listen to drill rap make the wrongful impression that the culture is associated with carrying knifes and causing harm to others.
+Charles: But that's hardly ever the case. See I'm a big fan of the drill culture and don't carry anything lethal with me. 
+Charles: Drill rap has actually helped me lots when I was growing up in the ghetto.
+Charles: Seeing how people who were in a similar situation as myself managed to rise up and fix their lives can be really inspiring.
+-> Ah I understand. There can actually be a positive side to the drill culture
+    <<jump FurtherNoNew>>
+===
+title: FurtherNoNew
+position: -40,138
+---
+Charles: Also, remember that most drill artist picture themselves carrying knifes or guns in social media just for the fame and popularity.
+Charles: They rarely do this in real life.
+-> That's something that I kinda figured out myslef. Nonetheless thanks for the explanation I think I understand the drill culture better now.
+    <<jump EndNoNew>>
+===
+title: EndNoNew
+position: 307,141
+---
+Charles: You're welcome fam. And if that guy you met before still doesn't wanna give up his knife, tell him to talk to me.
+Charles: I think I'll be able to make him change his mind.
+<<set $NoKnifeDrill to true>>
+===
+title: RepeatNoNew
+---
+Charles: ...
+===
+title: KnifeEndNoNew
+---
+Charles: No, no big man. I don't trust you with that knife you carry, please go away.
+===

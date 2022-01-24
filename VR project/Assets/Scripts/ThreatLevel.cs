@@ -4,49 +4,64 @@ using UnityEngine;
 
 public class ThreatLevel : MonoBehaviour
 {
-    bool Inventory = false;
     [SerializeField]
     int ThreatLow = 1;
-    [SerializeField] 
-    Transform Inventory1;
     [SerializeField]
     int ThreatOrigin = 9;
     public int ThreatNow = 1;
+    private bool grabbed;
+    
+    GameObject[] inventoryList = new GameObject[]{} ;
     // Start is called before the first frame update
     void Start()
     {
-        
+        inventoryList = GameObject.FindGameObjectsWithTag("Inventory");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= Inventory1.position.x + 0.1 &&
-            transform.position.x >= Inventory1.position.x - 0.1 &&
-            transform.position.y <= Inventory1.position.y + 0.1 &&
-            transform.position.y >= Inventory1.position.y - 0.1 &&
-            transform.position.z <= Inventory1.position.z + 0.1 &&
-            transform.position.z >= Inventory1.position.z - 0.1)
+        if (InventoryCheck() == true && grabbed == true)
         {
-            Inventory = true;
+            ThreatNow = ThreatLow;
+        }
+
+        if (grabbed == true && InventoryCheck() == false)
+        {
+            ThreatNow = ThreatOrigin;
         }
         else
         {
-            Inventory = false;
+            ThreatNow = ThreatLow;
         }
 
     }
 
     public void Grabbed()
     {
-        if (Inventory == false)
-        {
-            ThreatNow = ThreatOrigin;
-        }
+        grabbed = true;
     }
 
     public void Released()
     {
-        ThreatNow = ThreatLow;
+        grabbed = false;
+    }
+
+    public bool InventoryCheck()
+    {
+        foreach(GameObject Inventory in inventoryList)
+        {
+            if (transform.position.x <= Inventory.transform.position.x + 0.05 &&
+                transform.position.x >= Inventory.transform.position.x - 0.05 &&
+                transform.position.y <= Inventory.transform.position.y + 0.05 &&
+                transform.position.y >= Inventory.transform.position.y - 0.05 &&
+                transform.position.z <= Inventory.transform.position.z + 0.05 &&
+                transform.position.z >= Inventory.transform.position.z - 0.05)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

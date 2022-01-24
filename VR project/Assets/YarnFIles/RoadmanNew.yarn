@@ -1,0 +1,70 @@
+title: StartRoadman
+position: -189,-81
+---
+<<if $RoadmanTalked == true>>
+    <<jump RepeatRoadMan>>
+<<endif>>
+<<if $RoadmanTalkedKnife == true>>
+    <<jump RepeatKnifeRoadMan>>
+<<endif>>
+<<if $hasknife == true>>
+Felix: Yo big man whatcha want, I don't mean any trouble. Pleas leave me alone.
+-> Hey what's the problem, I'm just trying to talk to you.
+    <<jump KnifeEndRoadMan>>
+<<endif>>
+Felix: Hey bruv, whatcha looking at, you don't want any trouble do ya?
+-> Not really
+    <<jump ByeRoadMan>>
+-> Why are you standing here with this giant knife in your hands
+    <<jump ConversationRoadMan>>
+===
+title: ByeRoadMan
+position: 125,-77
+---
+Felix: That's right. Get outta here before I kick yo ass.
+===
+title: ConversationRoadMan
+position: 252,22
+---
+Felix: Because I like it like that. This ain't yo business. GTFO
+-> I'm not going anywhere until you get rid of that knife. It's dangerous for you and for the people around you.
+    <<jump ExplanationRoadMan>>
+-> Alright, alright I'm gone, chill.
+    <<jump ByeRoadMan>>
+===
+title: ExplanationRoadMan
+position: -97,49
+---
+Felix: Alright big man I see you are a stubborn one.
+Felix: I got this piece because none of my friends respected me.
+Felix: You know I want to be the alpha, I want them to treat me the way I deserve.
+-> Carrying a knife is certainly not a way to make your friends treat you better.
+Try to talk to them to figure out the reason they mistreat you. You can be an alpha without putting others at risk.
+    <<jump EndRoadMan>>
+===
+title: EndRoadMan
+position: 113,186
+---
+Felix: Now that you say it like that I see you have a point big man.
+Felix: I'll get rid of this and definetly talk to my bruvs about the way they treat me.
+Felix: You've helped me lots, I owe you one.
+<<set $RoadmanTalked to true>>
+<<set $npcSaved += 1>>
+===
+title: KnifeEndRoadMan
+position: 127,-206
+---
+Felix: No big man I ain't dense. I know you're trying to hurt me with this knife you're carrying.
+Felix: Get away from me right now.
+<<set $RoadmanTalkedKnife to true>>
+===
+title: RepeatRoadMan
+position: 27,-311
+---
+Felix: ...
+===
+title: RepeatKnifeRoadMan
+position: -274,-272
+---
+Felix: Get away big man, I told you I don't want any trouble.
+===

@@ -1,0 +1,71 @@
+title: BillyStart
+---
+<<if $billyTalked == true>>
+    <<jump Consider>>
+<<endif>>
+<<if $brotherSaved == true>>
+    <<jump ThankPlayer>>
+<<endif>>
+Billy: Ey, what's your problem?
+    -> Nothing. <<if $hasknife == true>>
+        <<jump NoProblem>>
+    -> That knife of yours. <<if $hasknife == false>>
+        <<jump Problem>>
+===
+title: NoProblem
+---
+Billy: Uh huh.
+===
+title: Problem
+---
+Billy: Wanna see it up close?
+    -> No.
+        <<jump BackOff>>
+===
+title: BackOff
+---
+Billy: Yeah, that's what I thought.
+Billy: Now move along.
+    -> I can't move along as long as you're being exploited like this.
+        <<jump Exploited>>
+    -> Ok, sorry. I'll be going.
+        <<jump NoProblem>>
+===
+title: Exploited
+---
+Billy: Exploited!?! No way. I don't even know what that means.
+    -> It means you're being forced to do something that you don't want to do while it benefits someone else.
+        <<jump Explain>>
+===
+title: Explain
+---
+Billy: Oh. I guess you're right.
+Billy: I'm only doing this to protect someone because otherwise they would be killed!
+Billy: Without me they would be in serious danger!
+    -> Who are you protecting?
+        <<jump Protecting>>
+===
+title: Protecting
+---
+Billy: My older brother. He's in a gang and he was threatened. Now someone is out to kill him and if he is caught carrying a knife he'll be arrested!
+Billy: It was the only way to protect him!
+        <<set $isProtecting to true>>
+    -> What if you were able to talk to the other gang member and resolve this without violence?
+        <<jump NoViolence>>
+===
+title: NoViolence
+---
+Billy: What!? No way! He'll just attack us instead of talking!
+    -> Maybe I could help. I'm not involved with either of your gangs, so if I could organize a meeting without weapons would you talk to him?
+        <<set $billyTalked to true>>
+        <<jump Consider>>
+===
+title: Consider
+---
+Billy: I need to talk to my brother.
+===
+title: ThankPlayer
+---
+Billy: Thanks for helping me and my brother! We are so grateful for letting us lead a normal life.
+<<set $npcSaved += 1>>
+===

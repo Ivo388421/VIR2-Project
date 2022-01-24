@@ -1,0 +1,52 @@
+title: JeffStart
+---
+<<if $jeffTalked == true>>
+    <<jump Return>>
+<<endif>>
+Jeff: Hey man, what's up?
+Jeff: You here for some weed?
+    -> I'm good, thanks.
+        <<jump ContinueJeff>>
+    -> How's it going?
+        <<jump Return>>
+===
+title: ContinueJeff
+---
+Jeff: That's cool.
+Jeff: What do you want from me then?
+Jeff: Since you must have talked to me for a reason.
+    -> I just talked to another dealer and I was wondering if you all carried knives. <<if $hastalked == true>>
+        <<jump ContinueContinue>>
+    -> Idk. <<if $hastalked == false>>
+        <<jump Done>>
+===
+title: ContinueContinue
+---
+Jeff: Ohh, naw. Knives are scary, man. Did you know that mose people that carry knives end up hurting themselves?
+Jeff: Also, the moment people see that you have a knife they tend to treat you in a more cautious way, like really unnaturally.
+Jeff: That's so weird to experience, trust me. I used to be like that guy as well.
+Jeff: But once I started seeing the effect it has on everyone and myself I decided to get rid of it.
+Jeff: Best decision I ever made.
+    ->That's crazy! No way you used to be like him... you're so much more chill!
+        <<jump Thanks>>
+===
+title: Thanks
+---
+Jeff: Thanks man. You know, if you meet more people like that and you don't know how to help them, you can always send them to me.
+Jeff: I'd love to give them advice on becoming better people!
+    -> Thanks! I'll definitely keep it in mind!
+        <<jump LeaveFirst>>
+===
+title: LeaveFirst
+---
+Jeff: Alright. Keep me posted.
+    <<set $jeffTalked to true>>
+===
+title: Done
+---
+Jeff: Bye.
+===
+title: Return
+---
+Jeff: Good.
+===

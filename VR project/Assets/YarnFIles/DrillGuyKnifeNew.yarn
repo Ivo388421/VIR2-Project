@@ -1,0 +1,88 @@
+title: DrillKnifeStart
+position: 30,-115
+---
+<<if $hasknife == true>>
+Rowan: Yo I see you carry a knife with you. Look I don't want any trouble, OK?
+-> Hey I'm just trying to talk to you, I don't mean any harm.
+    <<jump KnifeEndDrillGuyNew>>
+<<endif>>
+<<if $DrillGuyTalked == true>>
+    <<jump RepeatKnifeNew>>
+<<endif>>
+<<if $NoKnifeDrill == true>>
+    <<jump NewStart>>
+<<endif>>
+Rowan: Yo man check out this sick new song that came out.
+Rowan: It's lit!
+-> Sure let me give it a go.
+    <<jump Song>>
+-> Sorry I don't have the time right now.
+    <<jump ByeKnifeNew>>
+===
+title: ByeKnifeNew
+position: 288,19
+---
+Rowan: Fine then but you don't know what you missin.
+===
+title: Song
+position: 280,-192
+---
+<<set $Music = true>>
+Rowan: I knew you'd like it.
+Rowan: It really has a catchy beat.
+-> Sure it sounds good. What is that thing in your jacket btw?
+    <<jump Knife>>
+===
+title: Knife
+position: 557,-99
+---
+<<set $Music = false>>
+Rowan: Nothing much it's the knife that I carry with me.
+Rowan: You can't be a true drill fan without having one.
+-> Do you know what kind of trouble you can get into while carrying a knife. You can even get arrested.
+    <<jump ExplanationDrillKnife>>
+===
+title: ExplanationDrillKnife
+position: 606,30
+---
+Rowan: I know man but all of the drill rappers that I follow on IG carry knives with them.
+Rowan: It's part of the culture plus it'll make me super popular.
+-> You know that the rappers show this kind of behaviour on social medias just so that they can get more popular and increase their sales.
+Also carrying a knife will make you more hardly approachable for the others, because they will fear you. <<if $NoKnifeDrill == true>>
+    <<jump EndNew>>
+-> I am not really familiar with the drill culture but I'm sure making others feel unsafe by carrying a knife is certainly not a part of it.
+    <<jump NoTalkedEnd>>
+===
+title: EndNew
+position: 382,157
+---
+Rowan: Sheesh, I never looked at it from that point of view.
+Rowan: Maybe there is some truth in the words you say.
+Rowan: I may reconsider carrying that thing with me, I certainly don't want to get arrested.
+    <<set $npcSaved += 1>>
+-> That's better. And remember that people's image in social medias can be entirely different from what they are in real life.
+===
+title: NoTalkedEnd
+position: 283,-73
+---
+Rowan: You're saying things without knowing anything.
+Rowan: Make sure you first know what drill culture is truly about and then you can talk to me, you understand???
+<<set $DrillGuyTalked to true>>
+===
+title: RepeatKnifeNew
+position: -180,18
+---
+Rowan: I am not speaking to someone who doesn't have an idea what drill culture trully is.
+Rowan: GTFO.
+===
+title: NewStart
+position: -28,154
+---
+Rowan: Hey it's you again, you seem somewhat different than the last time we spoke.
+-> That's true. Do you still not understand what kind of trouble you can get into by carrying a knife.
+    <<jump ExplanationDrillKnife>>
+===
+title: KnifeEndDrillGuyNew
+---
+Rowan: Nah, nah I ain't trusting you bruv. Get rid of the knife and we can talk.
+===

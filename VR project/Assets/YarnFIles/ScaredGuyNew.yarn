@@ -1,0 +1,76 @@
+title: StartScaredGuy
+position: -159,-237
+---
+<<if $ScaredGuyTalked == true>>
+    <<jump Repeat>>
+<<endif>>
+<<if $ScaredGuyTalkedKnife == true>>
+    <<jump RepeatKnife>>
+<<endif>>
+<<if $hasknife == true>>
+William: Hey don't approach me. I can see that you have a knife with you.
+William: I'm not looking to cause any trouble.
+-> Hey I was just trying to talk with you. Why are you so scared of me?
+    <<jump KnifeEnd>>
+<<endif>>
+William: Hey get away from me. I know what you're trying to do.
+William: You're trying to hurt me just like everybody else does.
+->Hey, hey, calm down I am not trying to hurt you I just saw you walking around with that knife and wanted to help.
+    <<jump Explanation>>
+->Alright, alright I'm going away, no need to freak out
+    <<jump Bye>>
+===
+title: Bye
+position: 107,-238
+---
+William: That's right go away.
+William: Hmm looks like carrying a knife is actually useful.
+->Wait, why are you carrying a knife around?
+    <<jump Explanation>>
+===
+title: Explanation
+position: -140,-65
+---
+William: You wanna know why I carry a knife huh. Fine I'll tell you.
+William: Ever since I was little everyone around me was trying to hurt me somehow. In school or at home, it didn't matter.
+William: That's why I decided to get this knife, now no one dares to get near me.
+->Hey I understand that you've had a rough childhood but carrying a knife around isn't the solution that you're looking for.
+    <<jump Further>>
+===
+title: Further
+position: 152,-62
+---
+William: Then what are you suggesting. 
+William: I still fear that someone might try to hurt me.
+->If you still want to protect yourself you can try taking a self defence course or training a martial art that is centered around self defence like jiu jitsu for example.
+Carrying a knife with you only makes the other people fear you and not want to approach you even if they just want to talk to you.
+    <<jump End>>
+===
+title: End
+position: 90,112
+---
+William: Now that you're putting it like that I will try to get rid of this knife and approach people.
+->See, not everyone is out there to hurt you. There are other people just like me who will want to help you
+<<set $npcSaved += 1>>
+<<set $ScaredGuyTalked to true>>
+===
+title: KnifeEnd
+position: 136,-153
+---
+William: No, no I don't trust you. Please don't talk to me and go away.
+William: I don't want to be hurt anymore.
+<<set $ScaredGuyTalkedKnife to true>>
+===
+title: Repeat
+position: 184,-321
+---
+William: ...
+===
+title: RepeatKnife
+position: 72,-410
+---
+William: I already told you. Go away!
+===
+
+
+
