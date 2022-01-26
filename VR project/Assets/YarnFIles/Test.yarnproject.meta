@@ -12,18 +12,153 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: 1ef0da75925fc5744b4d5a6357c2957b, type: 3}
   - {fileID: 6391573757903218779, guid: 87ed1ba383259b34a81cd4133bed0945, type: 3}
   - {fileID: 6391573757903218779, guid: d0e5d337fabb76e4dbd7471bb70e2804, type: 3}
-  - {fileID: 6391573757903218779, guid: 38f3ce6ab5f3a0f45aa0b061215609eb, type: 3}
-  - {fileID: 6391573757903218779, guid: 8a26b0a633622ee47a9c2a295ee70faf, type: 3}
-  - {fileID: 6391573757903218779, guid: efbe77a17df01cd459d19e73c1f9dfcc, type: 3}
-  - {fileID: 6391573757903218779, guid: f0b5265d11c20524b9396c56eb4c8879, type: 3}
+  - {fileID: 6391573757903218779, guid: 2e2206daca62dec41ab4a4f52b582862, type: 3}
+  - {fileID: 6391573757903218779, guid: 077b61f2c0e16b147af00f8d02ba3676, type: 3}
+  - {fileID: 6391573757903218779, guid: 84edea914777cec4487a286207f91359, type: 3}
+  - {fileID: 6391573757903218779, guid: 49ef7af21f17eba4a8049d9547f112b9, type: 3}
   - {fileID: 6391573757903218779, guid: 299088c9b02a0f04f9be42a915badac7, type: 3}
   - {fileID: 6391573757903218779, guid: 8358936a5518b754e8b9ae8b5a01e119, type: 3}
-  - {fileID: 6391573757903218779, guid: ebd2b85b3c4a417419cb1785bb9f1802, type: 3}
+  - {fileID: 6391573757903218779, guid: 07deb6b097b8c7744a595c16e28e9607, type: 3}
   - {fileID: 6391573757903218779, guid: cb45c5e2e90ea9044b3c86b225c37fbd, type: 3}
   - {fileID: 6391573757903218779, guid: 24eb3a7930b8d4b4ba2074608be132f9, type: 3}
   - {fileID: 6391573757903218779, guid: c5ff7b77873e6e941a30b64f0ece129d, type: 3}
   compileErrors: []
-  serializedDeclarations: []
+  serializedDeclarations:
+  - name: $jeffTalked
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Chill_Drug_Dealer.yarn, node JeffStart, line 0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 1ef0da75925fc5744b4d5a6357c2957b,
+      type: 3}
+  - name: $hastalked
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Chill_Drug_Dealer.yarn, node ContinueJeff, line 3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 1ef0da75925fc5744b4d5a6357c2957b,
+      type: 3}
+  - name: $hasknife
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DrillGuyKnifeNew.yarn, node DrillKnifeStart, line 0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 87ed1ba383259b34a81cd4133bed0945,
+      type: 3}
+  - name: $DrillGuyTalked
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DrillGuyKnifeNew.yarn, node DrillKnifeStart, line 5
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 87ed1ba383259b34a81cd4133bed0945,
+      type: 3}
+  - name: $NoKnifeDrill
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DrillGuyKnifeNew.yarn, node DrillKnifeStart, line 8
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 87ed1ba383259b34a81cd4133bed0945,
+      type: 3}
+  - name: $Music
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DrillGuyKnifeNew.yarn, node Song, line 0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 87ed1ba383259b34a81cd4133bed0945,
+      type: 3}
+  - name: $npcSaved
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DrillGuyKnifeNew.yarn, node EndNew, line 3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 87ed1ba383259b34a81cd4133bed0945,
+      type: 3}
+  - name: $billyTalked
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Kid_With_Knife.yarn, node BillyStart, line 0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 299088c9b02a0f04f9be42a915badac7,
+      type: 3}
+  - name: $brotherSaved
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Kid_With_Knife.yarn, node BillyStart, line 3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 299088c9b02a0f04f9be42a915badac7,
+      type: 3}
+  - name: $isProtecting
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Kid_With_Knife.yarn, node Protecting, line 2
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 299088c9b02a0f04f9be42a915badac7,
+      type: 3}
+  - name: $shaunTalked
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Knife_Drug_Dealer.yarn, node ShaunStart, line 0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 8358936a5518b754e8b9ae8b5a01e119,
+      type: 3}
+  - name: $RoadmanTalked
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: RoadmanNew.yarn, node StartRoadman, line 0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cb45c5e2e90ea9044b3c86b225c37fbd,
+      type: 3}
+  - name: $RoadmanTalkedKnife
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: RoadmanNew.yarn, node StartRoadman, line 3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cb45c5e2e90ea9044b3c86b225c37fbd,
+      type: 3}
+  - name: $ScaredGuyTalked
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: ScaredGuyNew.yarn, node StartScaredGuy, line 0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 24eb3a7930b8d4b4ba2074608be132f9,
+      type: 3}
+  - name: $ScaredGuyTalkedKnife
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: ScaredGuyNew.yarn, node StartScaredGuy, line 3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 24eb3a7930b8d4b4ba2074608be132f9,
+      type: 3}
   defaultLanguage: en-US
   languagesToSourceAssets: []
   useAddressableAssets: 0

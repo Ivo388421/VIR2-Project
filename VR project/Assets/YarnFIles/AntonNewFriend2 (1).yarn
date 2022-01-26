@@ -1,0 +1,60 @@
+title: AntonStart
+position: -168,23
+---
+<<if $AntonTalked == true>>
+    <<jump AntonRepeat>>
+<<endif>>
+<<if $hasknife == true>>
+Anton: Hey I see you already have a knife, very good.
+    <<set $AntonTalked to true>>
+<<endif>>
+<<if $hasknife == false>>
+Anton: Yo my man. Anton here has something for you.
+Anton: For real man it's epic.
+-> Yo why are you carrying this knife Anton. You used to be so shy and closed.
+    <<jump AntonExplanation>>
+-> Yoo is that for me. It's so sharp, thanks man I appreciate it.
+    <<jump AntonKnife>>
+<<endif>>
+===
+title: AntonExplanation
+position: 219,-203
+---
+Anton: Exactly. Everyone used to bully me and make fun of how I looked. 
+Anton: But now they all respect me and don't dare to speak to me. 
+-> See you've said it yourself. No one dares to speak to you because they fear you.
+Since you started carrying the knife you've become just like the people who used to bully you before.
+    <<jump AntonContinue>>
+===
+title: AntonKnife
+position: 227,-81
+---
+Anton: I knew you'd like it. 
+Anton: Now we'll show them what it means to make fun of us.
+<<set $hasknife to true>>
+<<set $AntonTalked to true>>
+===
+title: AntonContinue
+position: -102,-154
+---
+Anton: Maybe you're right. 
+Anton: But how can I cope with all the hate that people send towards me.
+Anton: I don't want people to bully me.
+-> Your family will always support you no matter what happens and if this doesn't help there's always professionals ready to hear you.
+Also remember that people might try to hurt you from time to time. Instead of listening to them focus on the people who care about you, like your friends.
+    <<jump AntonChangedMind>>
+===
+title: AntonChangedMind
+position: -150,121
+---
+Anton: Hey, that was really inspiring.
+Anton: I've never actually talked to my parents about those problems, I just thought they wouldn't understand.
+Anton: I don't think I need this anymore(tosses knife).
+<<set $npcSaved +=1>>
+<<set $AntonTalked to true>>
+===
+title: AntonRepeat
+position: 146,105
+---
+Anton: ...
+===

@@ -1,0 +1,67 @@
+title: JohnStart
+position: -90,98
+---
+<<if $hasknife == true>>
+John: Oh i see you already have a knife
+    <<set $johnTalked to true>>
+<<endif>>
+<<if $johnTalked == true>>
+    <<jump RepeatWithKnife>>
+<<endif>>
+<<if $johnTalked == false>>
+<<set $respect = 0>>
+<<set $npcSaved = 0>>
+John: Yo, come here.
+John: We got you something.
+    -> (take knife)
+        <<set $hasknife to true>>
+        <<jump Taken>>
+    -> (don't take knife)
+        <<set $hasknife to false>>
+        <<jump Rejected>>
+<<endif>>
+===
+title: Taken
+position: 226,-79
+---
+John: Nice.
+John: Now you're like us.
+John: How does it feel?
+    -> Good.
+        <<jump GoodKnife>>
+    -> I feel terrible. I changed my mind. (give back knife)
+        <<set $hasknife to false>>
+        <<jump BadKnife>>
+===
+title: Rejected
+position: -80,-109
+---
+John: What? Why not? Scared?
+John: Pff. Come on, just take it.
+    -> Fine.
+        <<set $hasknife to true>>
+        <<jump Taken>>
+    -> No. I said I don't want it.
+        <<jump BadKnife>>
+===
+title: GoodKnife
+position: 140,-202
+---
+John: Right? Like you have all the power in the world and no one can stand in your way.
+John: Everyone has to respect you now.
+    <<set $hasknife to true>>
+    <<set $johnTalked to true>>
+===
+title: BadKnife
+position: 113,57
+---
+John: Fine. Be boring.
+John: Everyone is gonna respect us and hate you, you know.
+John: You'll see.
+    <<set $hasknife to false>>
+    <<set $johnTalked to true>>
+===
+title: RepeatWithKnife
+---
+John: ...
+===

@@ -1,0 +1,73 @@
+title: StartGangMemberOther
+position: 10,-174
+---
+<<if $OtherTalked == true>>
+    <<jump RepeatOtherNew>>
+<<endif>>
+<<if $NoRespectTalked == true>>
+    <<jump NoRespect>>
+<<endif>>
+Jeremy: Yo, kid can I ask you for a favor?
+Jeremy: I really need your help.
+->Sure, what can I help you with. <<if $hasknife == false>>
+    <<jump AgreeOtherNew>>
+->I'm sorry I've got better things to do right now. <<if $hasknife>>
+    <<jump DisagreeOtherNew>>
+===
+title: AgreeOtherNew
+position: -211,-49
+---
+Jeremy: See there's someone from a rival gang that's after me.
+Jeremy: You might have seen him around.
+Jeremy: What I want from you is to protect me from this person because I think he's carrying a knife and he might want to stab me.
+->I've actually got an idea of how to protect both of you. Instead of trying to stab each other and live in constant fear why don't you try to talk with him and achieve peace.
+    <<jump ExplanationOtherNew>>
+===
+title: DisagreeOtherNew
+position: 222,-43
+---
+Jeremy: But my life is in danger. Please I need your help!
+->Alright alright I will help you
+    <<jump AgreeOtherNew>>
+===
+title: ExplanationOtherNew
+position: -172,132
+---
+Jeremy: How do you think I'll be able to talk to him?
+Jeremy: Even if I decide to put my knife away he'll still come and stab me. 
+Jeremy: I can't risk this
+->What if I tell you that I've already talked with him and he's decided to come with peace. 
+Whenever you carry a knife because you want to hurt others, you also automatically assume that the others will also try to hurt you.
+This is not an acceptable approach. Put the knife down and have a conversation like grown-ups. <<if $respect == 1>>
+    <<jump EndMember>>
+->How about I try to approach him and work out this situation without the need of violence. 
+What do you think about that? <<if $respect == 0>>
+    <<jump NoRespectEnd>>
+===
+title: EndMember
+position: 185,137
+---
+Jeremy: There's a lot of sense in what you are saying young man. 
+Jeremy: I carried a knife because I assumed that the other guy was gonna chase me but I never tried to talk to him.
+Jeremy: I'll reach him out and let's hope we achieve peace
+->I also hope this can happen. Violence is never the right option.
+    <<set $OtherTalked to true>>
+    <<set $respect +=1>>
+    <<set $npcSaved += 1>>
+===
+title: NoRespectEnd
+position: 65,260
+---
+Jeremy: Sure, since you have the courage to do this, I'm certainly not talking to this psycho.
+    <<set $NoRespectTalked to true>>
+===
+title: RepeatOtherNew
+position: 258,-178
+---
+Jeremy: ...
+===
+title: NoRespect
+position: 197,-316
+---
+Jeremy: Go on, talk to the other guy already.
+===

@@ -31,7 +31,7 @@ public class KnifeTeleport : MonoBehaviour
         }
         if (dialogueRunner.GetComponent<DialogueRunner>().Dialogue.CurrentNode == "SteveKnife")
         {
-            Knife.position = JohnTP.position;
+            Knife.position = SteveTP.position;
         }
     }
 }

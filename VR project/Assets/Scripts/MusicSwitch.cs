@@ -14,7 +14,13 @@ public class MusicSwitch : MonoBehaviour
     [SerializeField] private AudioClip GoodMusic;
     [SerializeField] private AudioClip drill;
 
-    private bool PauseOther;
+    [SerializeField] private bool PauseOther;
+
+    [SerializeField] private bool badmusicPlay;
+
+    [SerializeField] private bool goodmusicPlay;
+
+    [SerializeField] private bool drillmusicPlay;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,23 +35,32 @@ public class MusicSwitch : MonoBehaviour
         {
             if (item.Key == "$hasknife")
             {
-                if (item.Value.ToString() == "True" && PauseOther == false)
+                if (item.Value.ToString() == "True")
                 {
-                    
-                    selectedSongManagement.clip = BadMusic;
-                    if (selectedSongManagement.isPlaying == false)
+                    if (badmusicPlay == false && PauseOther == false)
                     {
+                        selectedSongManagement.Stop();
+                        selectedSongManagement.clip = BadMusic;
                         selectedSongManagement.Play();
+                        badmusicPlay = true;
+                        goodmusicPlay = false;
+                        drillmusicPlay = false;
                     }
-                    
+
+
                 }
-                if (item.Value.ToString() == "false" && PauseOther == false)
+                if (item.Value.ToString() == "False")
                 {
-                    selectedSongManagement.clip = GoodMusic;
-                    if (selectedSongManagement.isPlaying == false)
+                    if (goodmusicPlay == false && PauseOther == false)
                     {
+                        selectedSongManagement.Stop();
+                        selectedSongManagement.clip = GoodMusic;
                         selectedSongManagement.Play();
+                        badmusicPlay = false;
+                        goodmusicPlay = true;
+                        drillmusicPlay = false;
                     }
+                    
                 }
                 
             }
@@ -54,12 +69,17 @@ public class MusicSwitch : MonoBehaviour
             {
                 if (item.Value.ToString() == "True")
                 {
-                    selectedSongManagement.clip = drill;
-                    PauseOther = true;
-                    if (selectedSongManagement.isPlaying == false)
+                    if (drillmusicPlay == false && PauseOther == false)
                     {
+                        selectedSongManagement.Stop();
+                        selectedSongManagement.clip = drill;
                         selectedSongManagement.Play();
+                        badmusicPlay = false;
+                        goodmusicPlay = false;
+                        drillmusicPlay = true;
+                        PauseOther = true;
                     }
+
                 }
                 else
                 {
